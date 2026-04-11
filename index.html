@@ -3,48 +3,82 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Portafolio - Armando</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <style>
-    body {
-      font-family: Arial, sans-serif;
+    * {
       margin: 0;
-      background: #f4f4f4;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: #0f172a;
+      color: white;
     }
 
     header {
-      background: #333;
-      color: white;
-      padding: 20px;
       text-align: center;
+      padding: 50px 20px;
+    }
+
+    header h1 {
+      font-size: 40px;
+    }
+
+    header p {
+      color: #94a3b8;
+    }
+
+    nav {
+      text-align: center;
+      margin: 20px;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
     }
 
     section {
-      padding: 20px;
-      margin: 10px;
-      background: white;
-      border-radius: 10px;
-    }
-
-    h2 {
-      color: #333;
+      padding: 40px;
     }
 
     .skills span {
       display: inline-block;
-      background: #007BFF;
-      color: white;
-      padding: 5px 10px;
+      background: #2563eb;
+      padding: 8px 12px;
       margin: 5px;
       border-radius: 5px;
     }
 
+    .proyectos {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: #1e293b;
+      padding: 20px;
+      border-radius: 10px;
+    }
+
     .contador {
-      font-size: 24px;
-      color: red;
+      font-size: 25px;
+      color: #f87171;
       text-align: center;
       margin-top: 20px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #020617;
+      margin-top: 30px;
     }
   </style>
 </head>
@@ -53,17 +87,24 @@
 
 <header>
   <h1>Armando Condor de la Cruz</h1>
-  <p>Ingeniero de Sistemas</p>
+  <p>Ingeniero de Sistemas | Desarrollador Web</p>
 </header>
+
+<nav>
+  <a href=\"#\">Inicio</a>
+  <a href=\"#skills\">Habilidades</a>
+  <a href=\"#proyectos\">Proyectos</a>
+  <a href=\"#contacto\">Contacto</a>
+</nav>
 
 <section>
   <h2>Sobre mí</h2>
-  <p>Soy estudiante de Ingeniería de Sistemas con conocimientos en desarrollo web, programación y bases de datos.</p>
+  <p>Soy estudiante de Ingeniería de Sistemas apasionado por la tecnología, desarrollo web y soluciones innovadoras.</p>
 </section>
 
-<section>
+<section id=\"skills\">
   <h2>Habilidades</h2>
-  <div class="skills">
+  <div class=\"skills\">
     <span>HTML</span>
     <span>CSS</span>
     <span>JavaScript</span>
@@ -73,16 +114,41 @@
   </div>
 </section>
 
-<section>
-  <h2>Objetivo</h2>
-  <p>Estoy en búsqueda de oportunidades laborales donde pueda aplicar mis conocimientos y seguir aprendiendo.</p>
+<section id=\"proyectos\">
+  <h2>Proyectos</h2>
+  <div class=\"proyectos\">
+    <div class=\"card\">
+      <h3>Tienda Web</h3>
+      <p>Proyecto de venta de hardware con HTML, CSS y JavaScript.</p>
+    </div>
+
+    <div class=\"card\">
+      <h3>Sistema Escolar</h3>
+      <p>Base de datos para gestión de alumnos, notas y asistencia.</p>
+    </div>
+
+    <div class=\"card\">
+      <h3>App en Power Apps</h3>
+      <p>Aplicación para gestión de productos y ventas.</p>
+    </div>
+  </div>
 </section>
 
 <section>
-  <h2>Tiempo para encontrar trabajo</h2>
-  <p>Tiempo restante (4 semanas):</p>
-  <div class="contador" id="contador"></div>
+  <h2>Meta laboral</h2>
+  <p>Tengo 4 semanas para conseguir trabajo:</p>
+  <div class=\"contador\" id=\"contador\"></div>
 </section>
+
+<section id=\"contacto\">
+  <h2>Contacto</h2>
+  <p>Email: tucorreo@gmail.com</p>
+  <p>GitHub: github.com/tuusuario</p>
+</section>
+
+<footer>
+  <p>© 2026 Armando - Portafolio</p>
+</footer>
 
 <script>
   const diasTotales = 28;
@@ -94,9 +160,9 @@
     const diasRestantes = diasTotales - diferencia;
 
     if (diasRestantes >= 0) {
-      document.getElementById("contador").innerText = diasRestantes + " días restantes";
+      document.getElementById(\"contador\").innerText = diasRestantes + \" días restantes\";
     } else {
-      document.getElementById("contador").innerText = "Tiempo finalizado";
+      document.getElementById(\"contador\").innerText = \"Tiempo finalizado\";
     }
   }
 
