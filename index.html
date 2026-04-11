@@ -1,1 +1,106 @@
-# armando-condor.github.io
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portafolio - Armando</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #f4f4f4;
+    }
+
+    header {
+      background: #333;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    section {
+      padding: 20px;
+      margin: 10px;
+      background: white;
+      border-radius: 10px;
+    }
+
+    h2 {
+      color: #333;
+    }
+
+    .skills span {
+      display: inline-block;
+      background: #007BFF;
+      color: white;
+      padding: 5px 10px;
+      margin: 5px;
+      border-radius: 5px;
+    }
+
+    .contador {
+      font-size: 24px;
+      color: red;
+      text-align: center;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>Armando Condor de la Cruz</h1>
+  <p>Ingeniero de Sistemas</p>
+</header>
+
+<section>
+  <h2>Sobre mí</h2>
+  <p>Soy estudiante de Ingeniería de Sistemas con conocimientos en desarrollo web, programación y bases de datos.</p>
+</section>
+
+<section>
+  <h2>Habilidades</h2>
+  <div class="skills">
+    <span>HTML</span>
+    <span>CSS</span>
+    <span>JavaScript</span>
+    <span>Java</span>
+    <span>Bases de Datos</span>
+    <span>Power Apps</span>
+  </div>
+</section>
+
+<section>
+  <h2>Objetivo</h2>
+  <p>Estoy en búsqueda de oportunidades laborales donde pueda aplicar mis conocimientos y seguir aprendiendo.</p>
+</section>
+
+<section>
+  <h2>Tiempo para encontrar trabajo</h2>
+  <p>Tiempo restante (4 semanas):</p>
+  <div class="contador" id="contador"></div>
+</section>
+
+<script>
+  const diasTotales = 28;
+  const fechaInicio = new Date();
+
+  function actualizarContador() {
+    const hoy = new Date();
+    const diferencia = Math.floor((hoy - fechaInicio) / (1000 * 60 * 60 * 24));
+    const diasRestantes = diasTotales - diferencia;
+
+    if (diasRestantes >= 0) {
+      document.getElementById("contador").innerText = diasRestantes + " días restantes";
+    } else {
+      document.getElementById("contador").innerText = "Tiempo finalizado";
+    }
+  }
+
+  setInterval(actualizarContador, 1000);
+</script>
+
+</body>
+</html>
