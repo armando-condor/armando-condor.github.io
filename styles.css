@@ -19,7 +19,8 @@ h1,h2{
   position: fixed;
   width:100%;
   display:flex;
-  justify-content:space-between;
+  justify-content: space-between;
+  align-items: center; /* IMPORTANTE */
   padding:15px 40px;
   background:white;
   box-shadow:0 2px 10px rgba(0,0,0,0.1);
@@ -28,6 +29,7 @@ h1,h2{
 .header nav{
   display:flex;
   gap:20px;
+  align-items:center;
 }
 
 .header a, .header button{
@@ -163,4 +165,11 @@ h1,h2{
   #nav-menu.active {
     display: flex;
   }
+}
+
+ /* CONTENEDOR DERECHO */
+.nav-container{
+  display:flex;
+  align-items:center;
+  gap:20px;
 }
